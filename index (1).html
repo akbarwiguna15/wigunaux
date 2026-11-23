@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiguna UX | Jasa Riset UX & Desain Produk Digital</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-teal: #0d9488;
+            --primary-teal-dark: #0f766e;
+            --accent-skyblue: #38bdf8;
+            --accent-blue: #0284c7;
+            --dark-bg: #042f2e;
+            --dark-navy: #082f49;
+            --light-bg: #f0fdfa;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #1e293b;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Color Utilities */
+        .text-teal {
+            color: var(--primary-teal) !important;
+        }
+        
+        .bg-teal {
+            background-color: var(--primary-teal) !important;
+        }
+
+        .bg-teal-subtle {
+            background-color: #ccfbf1 !important;
+            color: var(--primary-teal-dark) !important;
+        }
+
+        .bg-skyblue-subtle {
+            background-color: #e0f2fe !important;
+            color: var(--accent-blue) !important;
+        }
+
+        /* Navbar Glassmorphism */
+        .navbar-glass {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(204, 251, 241, 0.9);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-teal) !important;
+        }
+
+        /* Hero Section Gradient (Teal ke Biru Tua) */
+        .hero-section {
+            background: radial-gradient(circle at top right, var(--dark-navy), var(--dark-bg) 65%);
+            color: #ffffff;
+            padding: 130px 0 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            background: rgba(20, 184, 166, 0.18);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            color: #5eead4;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 6px 16px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #2dd4bf 0%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Buttons (Teal & Sky Blue) */
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-blue));
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px -10px rgba(13, 148, 136, 0.65);
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, var(--primary-teal-dark), #0369a1);
+            box-shadow: 0 15px 25px -10px rgba(2, 132, 199, 0.75);
+            color: white;
+        }
+
+        .btn-outline-teal {
+            border: 1.5px solid var(--primary-teal);
+            color: var(--primary-teal);
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline-teal:hover {
+            background-color: var(--primary-teal);
+            color: #ffffff;
+        }
+
+        /* Card Styling & Hover Effects */
+        .service-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #ffffff;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #99f6e4;
+            box-shadow: 0 20px 30px -15px rgba(13, 148, 136, 0.15);
+        }
+
+        .card-featured {
+            border: 2px solid var(--primary-teal) !important;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Floating Metric Card in Hero */
+        .hero-card-visual {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+
+        /* Form Styling */
+        .contact-wrapper {
+            background: linear-gradient(135deg, #f0fdfa 0%, #f0f9ff 100%);
+            border-radius: 24px;
+            border: 1px solid #ccfbf1;
+        }
+
+        .form-control, .form-select {
+            padding: 12px 16px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-glass fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2" href="#">
+                <span class="bg-teal text-white rounded-3 px-2 py-1 fs-5"><i class="bi bi-layers-half"></i></span>
+                <span>Wiguna <span class="text-teal">UX</span></span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto fw-medium gap-lg-4 my-3 my-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#konsultasi">Kontak</a></li>
+                </ul>
+                <div class="d-grid d-lg-block">
+                    <a href="#konsultasi" class="btn btn-primary-custom btn-sm px-4 py-2">Mulai Proyek</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. HERO SECTION -->
+    <section id="beranda" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <!-- Kolom Kiri: Copywriting & CTA -->
+                <div class="col-12 col-lg-7 text-center text-lg-start">
+                    <span class="hero-badge mb-3">
+                        <i class="bi bi-stars me-1"></i> Agensi Riset UX & Transformasi Digital
+                    </span>
+                    <h1 class="display-4 fw-bold lh-sm mb-4">
+                        Ubah Friksi Pengguna Menjadi <span class="text-gradient">Pertumbuhan Bisnis</span>
+                    </h1>
+                    <p class="lead opacity-75 mb-5 pe-lg-5">
+                        Bersama <strong>Wiguna UX</strong>, kami membantu startup dan perusahaan merancang produk digital yang intuitif berbasis data riset empiris, pengujian usability, dan desain antarmuka modern.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#konsultasi" class="btn btn-primary-custom">
+                            Jadwalkan Audit UX Gratis <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                        <a href="#layanan" class="btn btn-outline-light px-4 py-3 rounded-3 fw-semibold">
+                            Eksplorasi Layanan
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Visual Statistik Interaktif -->
+                <div class="col-12 col-lg-5">
+                    <div class="hero-card-visual shadow-lg">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <span class="badge bg-info bg-opacity-25 text-info px-3 py-2 rounded-pill">
+                                <i class="bi bi-graph-up-arrow me-1"></i> Dampak Terukur
+                            </span>
+                            <small class="text-white-50">Laporan Kuartal 2026</small>
+                        </div>
+                        <h4 class="fw-bold mb-1">+64% Tingkat Konversi</h4>
+                        <p class="small text-white-50 mb-4">Rata-rata peningkatan setelah perbaikan alur pengguna (user flow) & reduksi beban kognitif.</p>
+                        
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span>Skor System Usability Scale (SUS)</span>
+                                <span class="fw-bold text-info">88 / 100</span>
+                            </div>
+                            <div class="progress bg-dark" style="height: 8px;">
+                                <div class="progress-bar bg-info" style="width: 88%"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span>Retensi Pengguna 30 Hari</span>
+                                <span class="fw-bold" style="color: #2dd4bf;">92%</span>
+                            </div>
+                            <div class="progress bg-dark" style="height: 8px;">
+                                <div class="progress-bar" style="width: 92%; background-color: #14b8a6;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LAYANAN SECTION (3 CARD + RESPONSIVE GRID) -->
+    <section id="layanan" class="py-5 my-lg-5">
+        <div class="container">
+            <div class="row justify-content-center text-center mb-5">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <span class="text-teal fw-bold text-uppercase small">Solusi Wiguna UX</span>
+                    <h2 class="fw-bold display-6 mt-2 mb-3">Layanan Desain Berbasis Riset</h2>
+                    <p class="text-muted">Pendekatan terstruktur untuk memastikan setiap piksel memiliki tujuan bisnis dan kemudahan bagi pengguna.</p>
+                </div>
+            </div>
+
+            <!-- Grid Responsif: 1 kolom di HP (col-12), 2 kolom di Tablet (col-md-6), 3 kolom di Desktop (col-lg-4) -->
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card service-card h-100 p-4">
+                        <div class="card-body d-flex flex-column">
+                            <div class="icon-box bg-teal-subtle">
+                                <i class="bi bi-search"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">UX Audit & Heuristic Evaluation</h4>
+                            <p class="card-text text-muted mb-4 flex-grow-1">
+                                Identifikasi hambatan kognitif dan titik drop-off pada aplikasi atau website Anda menggunakan standar heuristik dan pengujian pengguna nyata.
+                            </p>
+                            <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-dark">Mulai Rp 4.5 Jt</span>
+                                <a href="#konsultasi" class="btn btn-outline-teal btn-sm rounded-pill px-3">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card service-card card-featured h-100 p-4 position-relative">
+                        <span class="position-absolute top-0 end-0 badge bg-teal m-3 rounded-pill">Terpopuler</span>
+                        <div class="card-body d-flex flex-column">
+                            <div class="icon-box bg-skyblue-subtle">
+                                <i class="bi bi-vector-pen"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">End-to-End UI/UX Product Design</h4>
+                            <p class="card-text text-muted mb-4 flex-grow-1">
+                                Perancangan produk digital dari nol: mulai dari wireframe, prototipe interaktif, hingga Design System lengkap yang siap dikembangkan tim developer.
+                            </p>
+                            <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-dark">Mulai Rp 12 Jt</span>
+                                <a href="#konsultasi" class="btn btn-primary-custom btn-sm rounded-pill px-3 py-1">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mx-md-auto">
+                    <div class="card service-card h-100 p-4">
+                        <div class="card-body d-flex flex-column">
+                            <div class="icon-box bg-teal-subtle">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <h4 class="card-title fw-bold mb-3">Frontend & Landing Page Dev</h4>
+                            <p class="card-text text-muted mb-4 flex-grow-1">
+                                Implementasi desain menjadi kode web yang responsif, cepat, ramah SEO, dan memiliki performa tinggi di seluruh ukuran perangkat.
+                            </p>
+                            <div class="pt-3 border-top d-flex justify-content-between align-items-center">
+                                <span class="fw-bold text-dark">Mulai Rp 6 Jt</span>
+                                <a href="#konsultasi" class="btn btn-outline-teal btn-sm rounded-pill px-3">Pilih Paket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FORM SECTION (KONSULTASI PROYEK) -->
+    <section id="konsultasi" class="py-5 mb-5">
+        <div class="container">
+            <div class="contact-wrapper p-4 p-md-5 shadow-sm">
+                <div class="row g-5 align-items-center">
+                    <!-- Informasi Kontak -->
+                    <div class="col-12 col-lg-5">
+                        <span class="badge bg-teal-subtle px-3 py-2 rounded-pill mb-3 fw-semibold">
+                            Diskusi Proyek
+                        </span>
+                        <h2 class="fw-bold mb-3">Siap Meningkatkan Kualitas Produk Anda?</h2>
+                        <p class="text-muted mb-4">
+                            Isi formulir di samping untuk menjadwalkan sesi konsultasi 30 menit bersama tim konsultan <strong>Wiguna UX</strong>. Gratis tanpa komitmen.
+                        </p>
+                        
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm text-teal">
+                                <i class="bi bi-envelope-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Email Resmi</small>
+                                <span class="fw-semibold">halo@wigunaux.id</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-white p-3 rounded-3 shadow-sm text-info">
+                                <i class="bi bi-geo-alt-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <small class="text-muted d-block">Studio</small>
+                                <span class="fw-semibold">Sidoarjo & Surabaya, Jawa Timur</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Input -->
+                    <div class="col-12 col-lg-7">
+                        <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                            <form id="projectForm">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label for="namaLengkap" class="form-label fw-semibold small">Nama Lengkap</label>
+                                        <input type="text" class="form-control" id="namaLengkap" placeholder="Contoh: Budi Santoso" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="emailKerja" class="form-label fw-semibold small">Email Perusahaan / Pribadi</label>
+                                        <input type="email" class="form-control" id="emailKerja" placeholder="nama@perusahaan.com" required>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="jenisLayanan" class="form-label fw-semibold small">Layanan yang Dibutuhkan</label>
+                                        <select class="form-select" id="jenisLayanan" required>
+                                            <option value="" selected disabled>Pilih layanan...</option>
+                                            <option value="audit">UX Audit & Heuristic Evaluation</option>
+                                            <option value="uiux">End-to-End UI/UX Design</option>
+                                            <option value="webdev">Frontend & Landing Page</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="estimasiBudget" class="form-label fw-semibold small">Estimasi Anggaran</label>
+                                        <select class="form-select" id="estimasiBudget">
+                                            <option value="1">Rp 4 Juta – Rp 8 Juta</option>
+                                            <option value="2" selected>Rp 8 Juta – Rp 15 Juta</option>
+                                            <option value="3">Di atas Rp 15 Juta</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="detailProyek" class="form-label fw-semibold small">Ceritakan Kebutuhan Proyek Anda</label>
+                                        <textarea class="form-control" id="detailProyek" rows="4" placeholder="Jelaskan secara singkat tantangan atau target produk digital Anda..." required></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                                            <i class="bi bi-send-fill me-2"></i> Kirim Permintaan Konsultasi
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Alert Feedback Interaktif -->
+                            <div id="formAlert" class="alert alert-info mt-3 d-none rounded-3 border-0" style="background-color: #ccfbf1; color: #0f766e;" role="alert">
+                                <i class="bi bi-check-circle-fill me-2"></i> Terima kasih! Permintaan konsultasi untuk <strong>Wiguna UX</strong> telah diterima. Tim kami akan menghubungi Anda dalam 1x24 jam.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-white-50 py-4" style="background-color: #042f2e;">
+        <div class="container text-center text-md-start d-md-flex justify-content-between align-items-center">
+            <p class="mb-2 mb-md-0 small">&copy; 2026 Wiguna UX. Dibangun dengan Bootstrap 5.</p>
+            <div class="d-flex justify-content-center gap-3 fs-5">
+                <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-dribbble"></i></a>
+                <a href="#" class="text-white-50 text-decoration-none"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script Sederhana untuk Simulasi Submit Form -->
+    <script>
+        document.getElementById('projectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('formAlert');
+            alertBox.classList.remove('d-none');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
